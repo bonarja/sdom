@@ -169,16 +169,16 @@ export const examples = {
         });
     `,
     Ajax: `
-        // in React
+        // get request
 
-        import {Get, Post} from "react-sdom";
-
-        Get('https://randomuser.me/api/')
+        _.get('https://randomuser.me/api/')
         .then(result => {
             console.log(result)
         })
 
-        Post('https://url.com/yourapi/', {user: 12})
+        // post request sending data
+
+        _.post('https://url.com/yourapi/', {user: 12})
         .then(result => {
             console.log(result)
         })
