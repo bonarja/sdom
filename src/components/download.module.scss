@@ -1,0 +1,11 @@
+@import "../vars.scss";
+.Download {
+    a {
+        &.compresed {
+            background-color: $hlc4;
+        }
+        &.uncompresed {
+            background-color: $hlc2;
+        }
+    }
+}

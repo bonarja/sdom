@@ -1,0 +1,110 @@
+@import "../vars.scss";
+$padding_left_items: 30px;
+$transition: 200ms;
+.Sidebar {
+    width: $sidebar_width;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    padding-top: $header_height;
+    transition: all ease 200ms;
+    background-color: $color0;
+    z-index: 2;
+
+    .wrap_sidebar {
+        position: relative;
+        padding-top: 30px;
+        padding-right: 30px;
+        overflow-y: auto;
+        height: 100%;
+        &::-webkit-scrollbar-thumb {
+            height: 5px;
+            background-color: #f1f1f1;
+        }
+        .divider {
+            padding-left: $padding_left_items;
+            height: 40px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 600;
+            p {
+                margin: 0;
+                color: $hlc1;
+                font-size: 1em;
+            }
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+    }
+}
+.item {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding-left: $padding_left_items;
+    cursor: pointer;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: $text1;
+    position: relative;
+    overflow: hidden;
+    &:hover {
+        box-shadow: $shadow0;
+    }
+    div {
+        position: absolute;
+        border-radius: 30px;
+        left: 0;
+        background-color: $hlc4;
+    }
+    p {
+        margin: 0;
+        font-weight: 600;
+        letter-spacing: 0.07em;
+        user-select: none;
+        position: absolute;
+        z-index: 1;
+        margin-top: -2px;
+    }
+    &.active {
+        transition-duration: $transition;
+        color: white;
+        div {
+            border-radius: 0px;
+            width: 100%;
+            height: 100%;
+            animation-name: active_item;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards;
+            animation-duration: $transition;
+        }
+    }
+}
+@keyframes active_item {
+    0% {
+        border-radius: 50%;
+        left: -10%;
+        width: 0;
+        height: 0;
+        box-shadow: 0 0 20px 0px rgba(101, 204, 175, 0.4);
+    }
+    40% {
+        border-radius: 15px;
+        width: 20%;
+        height: 30%;
+        left: -20%;
+        box-shadow: 0 0 20px 8px rgba(101, 204, 175, 0.4);
+    }
+    90% {
+        left: -20%;
+        border-radius: 15px;
+    }
+    100% {
+        border-radius: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}

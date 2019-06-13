@@ -1,0 +1,20 @@
+@import "../vars.scss";
+.title {
+    color: $text1;
+}
+.Home {
+    overflow-x: hidden;
+    grid-column-start: 1;
+    .wrap_home {
+        padding: 20px;
+        overflow: hidden;
+        overflow-y: auto;
+        .content {
+            p {
+                color: $text1;
+                font-size: 1.2em;
+                letter-spacing: 0.02em;
+            }
+        }
+    }
+}

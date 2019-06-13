@@ -1,0 +1,101 @@
+@import "../vars.scss";
+@import "../animations.scss";
+.App {
+    padding-top: $header_height;
+    padding-left: $sidebar_width;
+    overflow: hidden;
+    position: relative;
+    transition: all ease 300ms;
+    // -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+    &.open_menu {
+        #sidebar {
+            left: 0;
+        }
+    }
+    .content {
+        display: grid;
+        grid-template-columns: auto 450px;
+        transition: all ease 400ms;
+        overflow: hidden;
+        background-color: $color0;
+        &.hide_example {
+            display: block;
+            #code {
+                display: none;
+            }
+        }
+        #home {
+            background-color: $color0;
+        }
+        #code {
+            background-color: $color2;
+        }
+        @media screen and (max-width: 920px) {
+            & {
+                display: block;
+                overflow-y: auto;
+                padding-bottom: 70px;
+                #home {
+                    height: auto;
+                    min-height: 240px;
+                }
+                #code {
+                    margin-top: 40px;
+                    width: 465px;
+                    box-shadow: $shadow0;
+                    float: right;
+                    height: auto;
+                    border-top-left-radius: 5px;
+                    border-bottom-left-radius: 5px;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 650px) {
+        & {
+            padding-left: 0;
+            .content {
+                padding-bottom: 0 !important;
+            }
+        }
+        #sidebar {
+            left: -$sidebar_width;
+            box-shadow: $shadow0;
+        }
+        #header {
+            padding-left: 90px;
+            #menu {
+                display: flex;
+            }
+        }
+        #code {
+            box-shadow: none !important;
+            width: 100% !important;
+            border-radius: 0 !important;
+            padding-bottom: 40px !important;
+            code {
+                margin-left: -45px !important;
+                zoom: 0.8;
+            }
+        }
+    }
+}
+@media screen and(min-width: 1200px) {
+    @media screen and (min-height: 800px) {
+        .content {
+            background: transparent !important;
+        }
+        #code {
+            background-color: $code !important;
+        }
+        #sidebar {
+            background-color: $sidebar !important;
+        }
+        #app {
+            width: 1200px !important;
+            height: 800px !important;
+            border-radius: 5px;
+            box-shadow: $shadow1;
+        }
+    }
+}

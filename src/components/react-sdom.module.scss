@@ -1,0 +1,42 @@
+@import "../vars.scss";
+.ReactSdom {
+    .code {
+        background-color: $color1;
+        padding: 10px;
+        padding-left: 30px;
+        padding-right: 10px;
+        border-radius: 4px;
+        span {
+            color: $text2;
+        }
+        &[num="1"] {
+            span {
+                &:nth-child(1) {
+                    color: $hlc2;
+                }
+                &:nth-child(3) {
+                    color: $hlc4;
+                }
+            }
+        }
+        &[num="2"] {
+            span {
+                &:nth-child(1) {
+                    color: #c678dd;
+                }
+                &:nth-child(6) {
+                    color: #c678dd;
+                }
+                &:nth-child(7) {
+                    color: #98c379;
+                }
+            }
+        }
+    }
+    .npm {
+        background-color: $hlc4;
+    }
+    .example {
+        background-color: $hlc4;
+    }
+}

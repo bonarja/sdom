@@ -1,0 +1,15 @@
+@import "../vars.scss";
+
+.sdom {
+    font-size: 1.5em;
+    letter-spacing: 0.09em;
+    color: $color0;
+    span {
+        &:nth-child(1) {
+            color: #6bceee;
+        }
+        &:nth-child(3) {
+            color: #e98eb6;
+        }
+    }
+}

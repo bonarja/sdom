@@ -1,0 +1,15 @@
+@import "../vars.scss";
+.title {
+    color: $text1;
+}
+.Doc {
+    padding: 20px;
+    overflow-y: auto;
+    .content {
+        p {
+            color: $text1;
+            font-size: 1.2em;
+            letter-spacing: 0.04em;
+        }
+    }
+}
