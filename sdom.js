@@ -654,12 +654,6 @@
     Element.prototype.prepend = SDOM.prepend;
     NodeList.prototype.prepend = SDOM.prepend;
 
-    NodeList.prototype.addBefore = SDOM.addBefore;
-    Element.prototype.addBefore = SDOM.addBefore;
-
-    NodeList.prototype.addAfter = SDOM.addAfter;
-    Element.prototype.addAfter = SDOM.addAfter;
-
     NodeList.prototype.eq = function(a) {
         if (this[a]) {
             return window[selector](this[a]);
@@ -677,6 +671,9 @@
 
     NodeList.prototype.out = SDOM.out;
     Element.prototype.out = SDOM.out;
+
+    NodeList.prototype.animate = SDOM.animate;
+    Element.prototype.animate = SDOM.animate;
 
     NodeList.prototype.focus = SDOM.focus;
     Element.prototype.focus = SDOM.focus;
