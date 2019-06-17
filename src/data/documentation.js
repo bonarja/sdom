@@ -433,7 +433,7 @@ export const examples = {
 
             title = Sdom(); // get Sdom ref
             
-            componentDidUpdate() {
+            componentDidMount() {
                 // use Sdom ref
                 this.title.css({
                     color: "coral",
