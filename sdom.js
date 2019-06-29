@@ -85,6 +85,23 @@
                     }
                 }
 
+                // set data in get
+                if(type.toUpperCase() === "GET" && typeof data === "object") {
+                    if( url.indexOf("?")<0 ) {
+                        url+="?";
+                    } else {
+                        url+="&"
+                    }
+                    var count = 0;
+                    for (var key in data) {
+                        if (count > 0) {
+                            url+="&";
+                        }
+                        url+= key + "=" + data[key];
+                        count++;
+                    }
+                }
+
                 xhttp.open(type.toUpperCase(), url, true);
                 xhttp.setRequestHeader("Content-type", header);
 
